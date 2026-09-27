@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Countdown</title>
+<style>
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
 
+#timer {
+    color: white;
+    font-size: 150px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 35vh;
+}
+</style>
+</head>
+
+<body>
+
+<div id="timer">30:00</div>
+
+<script>
+let seconds = 1800;
+
+setInterval(function() {
+    if (seconds > 0) seconds--;
+
+    let minutes = Math.floor(seconds / 60);
+    let secs = seconds % 60;
+
+    document.getElementById("timer").innerText =
+        String(minutes).padStart(2, "0") + ":" +
+        String(secs).padStart(2, "0");
+}, 1000);
+</script>
+
+</body>
+</html>
